@@ -9,6 +9,8 @@ contract Assessment {
 
     event Deposit(uint256 amount);
     event Withdraw(uint256 amount);
+    event OwnerTransfer(address indexed previousOwner, address indexed newOwner);
+    event AccountClosure(address accountOwner);
 
     constructor(uint initBalance) payable {
         owner = payable(msg.sender);
@@ -57,4 +59,16 @@ contract Assessment {
         // emit the event
         emit Withdraw(_withdrawAmount);
     }
+    function transferOwnership(address payable newOwner)public {
+        require(msg.sender==owner, "only account owner can transfer account");
+        address previousOwner = owner;
+        owner= newOwner;
+        emit OwnerTransfer(previousOwner,newOwner);
+    }
+   function accountClosure() public {
+    require(msg.sender==owner, "only account owner can close account");
+    emit AccountClosure(owner);
+    selfdestruct(owner);
+
+   }
 }
