@@ -74,5 +74,6 @@ npx hardhat help
 
 **Authors**
 
-Your Name - Johnycrown
+Name - Johnycrown
+
 GitHub: https://github.com/Johnycrown
