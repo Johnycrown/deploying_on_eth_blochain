@@ -4,7 +4,7 @@
 
 Assessment is a Solidity smart contract designed to manage ownership and allow the owner to deposit and withdraw funds. It also includes functionalities for transferring ownership and self-destructing the contract for account closure. The contract uses events for tracking transactions and ownership changes while maintaining security and error handling through custom Solidity errors.
 
-**Description**
+**Function Description**
 
 The Assessment contract is a simple ownership-based wallet system that allows the following operations:
 
@@ -13,7 +13,7 @@ The Assessment contract is a simple ownership-based wallet system that allows th
 * Transferring ownership to another address.
 * Closing the account by self-destructing the contract.
   
-**Features:**
+**Event Features:**
 
 * Ownership-based access control for key functions.
 * Emits events (Deposit, Withdraw, OwnerTransfer, AccountClosure) for monitoring transactions.
